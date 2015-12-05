@@ -1,3 +1,9 @@
+'''
+    John Ezekiel:
+    Solution to the Mars Landing Level 2 Puzzle
+    on CodingGame (http://www.codingame.com)
+    Collaboration with Will Gossen :)
+'''
 import sys
 import math
 import collections
