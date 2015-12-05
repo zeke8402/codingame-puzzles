@@ -1,9 +1,3 @@
-'''
-    John Ezekiel:
-    Solution to the Mars Landing Level 2 Puzzle
-    on CodingGame (http://www.codingame.com)
-    Collaboration with Will Gossen :)
-'''
 import sys
 import math
 import collections
@@ -39,9 +33,9 @@ def findFlatLand(sortedPoints):
 
 # Stabilization method on start
 def stabilize(horizontalSpeed, verticalSpeed):
-   if horizontalSpeed >= 40:
+   if horizontalSpeed >= 50:
         print("21 4") 
-   elif horizontalSpeed <= -40:
+   elif horizontalSpeed <= -50:
         print("-21 4")
 
 
@@ -50,8 +44,8 @@ def approach(derekStarting, derekCurrent, derekClosest, derekSwitch, verticalSpe
     distXL = abs(derekClosest- derekCurrent)
     
     if derekCurrent > derekClosest and horizontalSpeed <= 0:
-        if horizontalSpeed > -38:
-            print("35 4")
+        if horizontalSpeed > -48:
+            print("30 4")
         else: 
             if verticalSpeed > 0:
                 print("0 3")
@@ -60,8 +54,8 @@ def approach(derekStarting, derekCurrent, derekClosest, derekSwitch, verticalSpe
     elif derekCurrent > derekClosest and horizontalSpeed > 0:
         print("60 4")
     elif derekCurrent < derekClosest and horizontalSpeed >= 0:
-        if horizontalSpeed < 38:
-            print("-35 4")
+        if horizontalSpeed < 48:
+            print("-30 4")
         else:
             if verticalSpeed > 0:
                 print("0 3")
@@ -80,10 +74,10 @@ def cqb(horizontalSpeed, verticalSpeed):
         print("0 2")
    elif horizontalSpeed > 1:
     #print(str(horizontalSpeed if (horizontalSpeed < 45) else 60) + " 4")
-    print("21 4")
+    print("30 4")
    elif horizontalSpeed < -1:
     #print(str(horizontalSpeed if (horizontalSpeed > -45) else -60) + " 4")
-    print("-21 4")
+    print("-30 4")
 
 
 
@@ -127,7 +121,7 @@ while 1:
     derekCurrent = x
 
     # Switch to CQB if within landing zone
-    if abs(h_speed) >= 40:
+    if abs(h_speed) >= 50:
         stabilize(h_speed, v_speed)
         print("Stabilizing...", file=sys.stderr)
     elif x >= flatLand[0] and x <= flatLand[1]:
