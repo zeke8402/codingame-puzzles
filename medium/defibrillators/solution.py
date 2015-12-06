@@ -35,7 +35,6 @@ def main():
         if closestDist > dist:
             closestDist = dist
             cDefib = d
-            
 
     print(cDefib.name)
         
