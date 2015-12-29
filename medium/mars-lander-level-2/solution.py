@@ -40,7 +40,7 @@ def stabilize(horizontalSpeed, verticalSpeed):
 
 
 # Movement method
-def approach(derekStarting, derekCurrent, derekClosest, derekSwitch, verticalSpeed, horizontalSpeed):
+def approach(derekCurrent, derekClosest, verticalSpeed, horizontalSpeed):
     distXL = abs(derekClosest- derekCurrent)
     
     if derekCurrent > derekClosest and horizontalSpeed <= 0:
@@ -85,7 +85,8 @@ points = {}
 surface_n = int(input())  # the number of points used to draw the surface of Mars.
 for i in range(surface_n):
     # land_x: X coordinate of a surface point. (0 to 6999)
-    # land_y: Y coordinate of a surface point. By linking all the points together in a sequential fashion, you form the surface of Mars.
+    # land_y: Y coordinate of a surface point.
+    # By linking all the points together in a sequential fashion, you form the surface of Mars.
     land_x, land_y = [int(j) for j in input().split()]
     points[land_x] = land_y
 
@@ -106,8 +107,6 @@ while 1:
     if not initialized:
         derekStarting = x
         derekClosest = (flatLand[0] + flatLand[1]) / 2
-        print("Starting Position is " + str(derekStarting), file=sys.stderr)
-        print("Point 1 is " + str(flatLand[0]) + " and Point 2 is " + str(flatLand[1]), file=sys.stderr)
         if abs(flatLand[0] - x) < abs(flatLand[1] - x):
             derekSwitch = abs((flatLand[0] - derekStarting) / 2)
         else:
